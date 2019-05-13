@@ -15,7 +15,7 @@ class CarRepository(val apiRepository: APIRepository,val dbRepository: DatabaseR
         return object :NetworkBoundResource<APIResponse,List<CarModel>>(context){
             override fun saveCallResult(request: APIResponse) {
                 Log.d("CAR REPOSITORY","SAVE CALL REESULT")
-//               dbRepository.saveCars(request.contents)
+               dbRepository.saveCars(request.contents)
             }
 
             override fun loadFromDb(): Flowable<List<CarModel>> {
