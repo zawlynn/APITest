@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.zawlynn.database
+package com.sevenpeakssoftware.zawlynn.data.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room

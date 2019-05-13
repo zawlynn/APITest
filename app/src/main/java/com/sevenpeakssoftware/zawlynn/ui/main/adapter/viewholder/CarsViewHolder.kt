@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sevenpeakssoftware.zawlynn.adapter.viewholder
+package com.sevenpeakssoftware.zawlynn.ui.main.adapter.viewholder
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

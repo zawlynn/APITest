@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.zawlynn.response
+package com.sevenpeakssoftware.zawlynn.data.network.response
 
 import com.google.gson.annotations.SerializedName
 import com.sevenpeakssoftware.zawlynn.model.CarModel

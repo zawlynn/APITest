@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.zawlynn
+package com.sevenpeakssoftware.zawlynn.ui.main
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
-import com.sevenpeakssoftware.zawlynn.adapter.CarListsAdapter
-import com.sevenpeakssoftware.zawlynn.viewmodel.MainActivityViewModel
+import com.sevenpeakssoftware.zawlynn.R
+import com.sevenpeakssoftware.zawlynn.ui.main.adapter.CarListsAdapter
+import com.sevenpeakssoftware.zawlynn.ui.main.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import com.sevenpeakssoftware.zawlynn.util.CommonUtility
 
@@ -27,11 +28,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        viewModel.cars.observe(this@MainActivity, Observer {
+        viewModel.getCar().observe(this@MainActivity, Observer {
             it?.let { it1 -> adapter.submitList(it) }
         })
         if(CommonUtility.getInstance().isNetworkAvailable(this@MainActivity)){
-            viewModel.getAllData()
+            viewModel.getAllData(this@MainActivity)
         } else{
             Snackbar.make(layout_main, resources.getString(R.string.no_internet), Snackbar.LENGTH_SHORT).show()
         }
